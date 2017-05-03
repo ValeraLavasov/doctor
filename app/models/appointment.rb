@@ -25,7 +25,7 @@ class Appointment < ApplicationRecord
     event :cancel do
       transitions from: :pending, to: :sleeping
     end
-
+    # Worker + service after appoint_to time is passed
     event :hold do
       transitions from: :approved, to: :held
     end
